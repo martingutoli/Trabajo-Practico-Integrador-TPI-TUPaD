@@ -43,6 +43,9 @@ def main():
     
     paises = leer_archivo_csv(nombre_archivo)
 
+    print("DATOS EN CRUDO; PARA VER SU ESTRUCTURA")
+    print(paises)
+
     mostrar_paises(paises)
    
 
