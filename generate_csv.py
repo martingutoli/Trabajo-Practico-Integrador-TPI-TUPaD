@@ -9,6 +9,8 @@ with open('paises.csv', 'w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['nombre', 'poblacion', 'superficie', 'continente'])
     
+    # TODO: traducir al español
+
     for country in data:
         nombre = country['name']['common']
         poblacion = country.get('population', 0)
