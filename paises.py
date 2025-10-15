@@ -11,13 +11,13 @@ def filtrar_por_continente(paises: list, continente: str) -> list:
     recibe: la lista de paises, y el continente por el que desea filtrar
     retorna: una lista nueva con los paises que tienen el continente recibido"""
 
-    paises_por_continente = []
+    filtrado_por_continente = []
 
     for pais in paises:
         if continente.lower() == pais['continente'].lower():
-            paises_por_continente.append(pais)
+            filtrado_por_continente.append(pais)
     
-    return paises_por_continente
+    return filtrado_por_continente
 
 
 def filtrar_rango_poblacion(paises: list, poblacion_minima: int, poblacion_maxima: int) -> list:
@@ -44,7 +44,12 @@ def ordenar_por_nombre(paises: list, ascendente: bool = True) -> list:
     recibe: la lista de paises, y opcionalmente si el orden es ascendente o no
     retorna: una nueva lista ordenada por nombre, según indique el argumento ascendente"""
 
-    return []
+    # una version mas simple y optima sin usar lambdas, seria asi:
+    # def obtener_nombre(pais):
+    #     return pais['nombre']
+
+    # return sorted(paises, key=obtener_nombre, reverse=not ascendente)
+
 
 def ordenar_por_poblacion(paises: list, ascendente: bool = True) -> list:
     """ordena los paises por poblacion
@@ -164,7 +169,7 @@ def main():
     print()
     print(" ORDENAMIENTO ".center(80, "="))
     print("\npor nombre")
-    print(mostrar_paises(ordenar_por_nombre(paises)))
+    print(mostrar_paises(ordenar_por_nombre(paises, ascendente=False)))
     print("\npor poblacion")
     print(mostrar_paises(ordenar_por_poblacion(paises)))
     print("\npor superficie")
