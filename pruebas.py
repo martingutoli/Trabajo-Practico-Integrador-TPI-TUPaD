@@ -1,81 +1,32 @@
 import csv
 import os
 
-from ordenamiento import ordenar_por_nombre
+from ordenamiento import (
+    ordenar_por_nombre, 
+    ordenar_por_poblacion, 
+    ordenar_por_superficie
+)
+
+from filtros import (
+    filtrar_por_continente,
+    filtrar_rango_poblacion,
+    filtrar_rango_superficie
+)
+
+from estadisticas import (
+    mayor_poblacion,
+    menor_poblacion,
+    poblacion_promedio,
+    superficie_promedio
+)
+
 
 nombre_archivo = "paises.csv"
 
 
-### FUNCIONES PARA FILTRAR (MODULO FILTROS?)
-
-def filtrar_por_continente(paises: list, continente: str) -> list:
-    """filtra los paises por continente
-    recibe: la lista de paises, y el continente por el que desea filtrar
-    retorna: una lista nueva con los paises que tienen el continente recibido"""
-
-    filtrado_por_continente = []
-
-    for pais in paises:
-        if continente.lower() == pais['continente'].lower():
-            filtrado_por_continente.append(pais)
-    
-    return filtrado_por_continente
-
-
-def filtrar_rango_poblacion(paises: list, poblacion_minima: int, poblacion_maxima: int) -> list:
-    """filtra los paises por rango de poblacion
-    recibe: la lista de paises, el rango minimo y maximo de poblacion para filtrar
-    retorna: una lista nueva con los paises que cumplan con el rango minimo y maximo recibidos
-    """
-
-    return []
-
-
-def filtrar_rango_superficie(paises: list, superficie_minima: int, superficie_maxima: int) -> list:
-    """filtra los paises por rango de superficie
-    recibe: la lista de paises, el rango minimo y maximo de superficie para filtrar
-    retorna: una lista nueva con los paises que cumplan con el rango minimo y maximo recibidos
-    """
-
-    return []
-
-### FUNCIONES PARA ORDENAR (MODULO ORDENAMIENTOS?)
-
-
-
-
 ### FUNCIONES PARA ESTADISTICAS (MODULO ESTADISTICAS?
 
-def menor_poblacion(paises: list) -> dict:
-    """retorna el pais con menor poblacion"""
 
-    # aqui se puede usar usar la funcion que ordena por poblacion (ascendente)
-    # y obtener el primer pais de esa lista
-
-    return {}
-
-
-def mayor_poblacion(paises: list) -> dict:
-    """retorna el pais con mayor poblacion"""
-
-    # aqui se puede usar usar la funcion que ordena por poblacion (ascendente)
-    # y obtener el ultimo pais de esa lista
-
-    return {}
-
-
-def poblacion_promedio(paises: list) -> float:
-    """recibe la lista de paises
-    retorna el promedio de la poblacion de todos los paises"""
-
-    return 0.0
-
-
-def superficie_promedio(paises: list) -> float:
-    """recibe la lista de paises
-    retorna el promedio de la superficie de todos los paises"""
-
-    return 0.0
 
 
 ### FUNCIONES DE BUSQUEDA
@@ -150,27 +101,27 @@ def main():
     # print(mostrar_paises(filtrar_rango_superficie(paises, 236800, 9372610)))
     # print(" FIN FILTROS ".center(80, "="))
     # print()
-    print(" ORDENAMIENTO ".center(80, "*"))
-    print("\npor nombre")
+    # print(" ORDENAMIENTO ".center(80, "*"))
+    # print("\npor nombre")
     
-    paises_ordenados = ordenar_por_nombre(paises)
-    mostrar_paises(paises_ordenados)
+    # paises_ordenados = ordenar_por_nombre(paises)
+    # mostrar_paises(paises_ordenados)
     # print("\npor poblacion")
     # print(mostrar_paises(ordenar_por_poblacion(paises)))
     # print("\npor superficie")
     # print(mostrar_paises(ordenar_por_superficie(paises)))
     # print(" FIN ORDENAMIENTO ".center(80, "="))
     # print()
-    # print(" ESTADISTICAS ".center(80, "="))
-    # print("\npais con menor poblacion")
-    # print(menor_poblacion(paises))
-    # print("\npais con mayor poblacion")
-    # print(mayor_poblacion(paises))
-    # print("\npoblacion promedio")
-    # print(poblacion_promedio(paises))
-    # print("\nsuperficie promedio")
-    # print(superficie_promedio(paises))
-    # print(" FIN ESTADISTICAS ".center(80, "="))
+    print(" ESTADISTICAS ".center(80, "="))
+    print("\npais con menor poblacion")
+    print(menor_poblacion(paises))
+    print("\npais con mayor poblacion")
+    print(mayor_poblacion(paises))
+    print("\npoblacion promedio")
+    print(poblacion_promedio(paises))
+    print("\nsuperficie promedio")
+    print(superficie_promedio(paises))
+    print(" FIN ESTADISTICAS ".center(80, "="))
 
 if __name__ == '__main__':
     main()

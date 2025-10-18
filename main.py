@@ -1,4 +1,3 @@
-
 menu = [
 "1. BUSCAR PAÍS",
 "2. FILTRAR PAÍSES",  
@@ -69,7 +68,7 @@ def main():
                 while True:
                     opcion_filtro = mostrar_menu("SUBMENÚ DE FILTRO", submenu_filtro)
                     if opcion_filtro == "1":
-                        fitro_por_continente(continente)
+                        print("Funcionalidad de filtro por continente no implementada aún.")
                     elif opcion_filtro == "2":
                         print("Funcionalidad de filtro por rango de población no implementada aún.")
                     elif opcion_filtro == "3":
