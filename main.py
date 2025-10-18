@@ -1,14 +1,3 @@
-from filtros import (
-    filtrar_por_algo, 
-    filtrar_por_continente, 
-    filtrar_por_poblacion
-)
-
-
-
-
-
-mostrar_menu
 
 menu = [
 "1. BUSCAR PAÍS",
